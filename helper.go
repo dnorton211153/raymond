@@ -133,6 +133,21 @@ func (options *Options) Ctx() interface{} {
 	return options.eval.curCtx().Interface()
 }
 
+// AllCtx returns the union of all contexts in the stack. Values from a context higher in the stack overwite values of lower contexts.
+func (options *Options) AllCtx() interface{} {
+	allCtx := make(map[string]interface{})
+	// Loop backwards through all contexts in the stack
+	for i := len(options.eval.ctx) - 1; i >= 0; i-- {
+		if ctxMap, ok := options.eval.ancestorCtx(i).Interface().(map[string]interface{}); ok {
+			for key, value := range ctxMap {
+				allCtx[key] = value
+			}
+		}
+	}
+
+	return allCtx
+}
+
 //
 // Hash Arguments
 //
