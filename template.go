@@ -203,8 +203,19 @@ func (tpl *Template) MustExec(ctx interface{}) string {
 	return result
 }
 
-// ExecWith evaluates template with given context and private data frame.
+// ExecWith executes the template with given context and private data frame.
 func (tpl *Template) ExecWith(ctx interface{}, privData *DataFrame) (result string, err error) {
+	evaled, err := tpl.EvalWith(ctx, privData)
+	if err != nil {
+		return "", err
+	}
+
+	result, _ = evaled.(string)
+	return
+}
+
+// EvalWith evaluates the template with given context and private data frame.
+func (tpl *Template) EvalWith(ctx interface{}, privData *DataFrame) (result interface{}, err error) {
 	defer errRecover(&err)
 
 	// parses template if necessary
@@ -217,10 +228,15 @@ func (tpl *Template) ExecWith(ctx interface{}, privData *DataFrame) (result stri
 	v := newEvalVisitor(tpl, ctx, privData)
 
 	// visit AST
-	result, _ = tpl.program.Accept(v).(string)
+	result = tpl.program.Accept(v)
 
 	// named return values
 	return
+}
+
+// Eval evaluates template with given context.
+func (tpl *Template) Eval(ctx interface{}) (result interface{}, err error) {
+	return tpl.EvalWith(ctx, nil)
 }
 
 // errRecover recovers evaluation panic
