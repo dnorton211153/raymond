@@ -27,21 +27,17 @@ func MustRender(source string, ctx interface{}) string {
 	return MustParse(source).MustExec(ctx)
 }
 
-// Eval parses a template and evaluates it with given context.
+// EvalSingleExpression parses a template with one expression and evaluates it
+// with given context.
 //
-// This is usefule to evaluate helper calls etc.
-func Eval(source string, ctx interface{}) (interface{}, error) {
+// This is useful to evaluate helper calls etc.
+func EvalSingleExpression(source string, ctx interface{}) (interface{}, error) {
 	// parse template
-	tpl, err := Parse(source)
+	sexpr, err := ParseSingleExpression(source)
 	if err != nil {
 		return "", err
 	}
 
-	// evaluate template
-	res, err := tpl.Eval(ctx)
-	if err != nil {
-		return "", err
-	}
-
-	return res, nil
+	// evaluate expression
+	return sexpr.Eval(ctx), nil
 }
