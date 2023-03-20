@@ -1315,7 +1315,7 @@ package main
 import (
     "fmt"
 
-    "github.com/aymerick/raymond/lexer"
+    "github.com/daz3d/raymond/lexer"
 )
 
 func main() {
