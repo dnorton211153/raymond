@@ -1,4 +1,4 @@
-module github.com/dnorton211153/raymond/v2
+module github.com/dnorton211153/raymond
 
 go 1.11
 
