@@ -7,8 +7,8 @@ import (
 	"runtime"
 	"sync"
 
-	"github.com/daz3d/raymond/ast"
-	"github.com/daz3d/raymond/parser"
+	"github.com/dnorton211153/raymond/ast"
+	"github.com/dnorton211153/raymond/parser"
 )
 
 // Template represents a handlebars template.

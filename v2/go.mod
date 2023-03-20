@@ -1,4 +1,4 @@
-module github.com/daz3d/raymond/v2
+module github.com/dnorton211153/raymond/v2
 
 go 1.20
 

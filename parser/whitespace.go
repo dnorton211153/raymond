@@ -3,7 +3,7 @@ package parser
 import (
 	"regexp"
 
-	"github.com/daz3d/raymond/ast"
+	"github.com/dnorton211153/raymond/ast"
 )
 
 // whitespaceVisitor walks through the AST to perform whitespace control

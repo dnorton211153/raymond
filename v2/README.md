@@ -1,10 +1,10 @@
-# raymond [![Build Status](https://secure.travis-ci.org/daz3d/raymond.svg?branch=master)](http://travis-ci.org/daz3d/raymond) [![GoDoc](https://godoc.org/github.com/daz3d/raymond?status.svg)](http://godoc.org/github.com/daz3d/raymond)
+# raymond [![Build Status](https://secure.travis-ci.org/dnorton211153/raymond.svg?branch=master)](http://travis-ci.org/dnorton211153/raymond) [![GoDoc](https://godoc.org/github.com/dnorton211153/raymond?status.svg)](http://godoc.org/github.com/dnorton211153/raymond)
 
 Handlebars for [golang](https://golang.org) with the same features as [handlebars.js](http://handlebarsjs.com) `3.0`.
 
-The full API documentation is available here: <http://godoc.org/github.com/daz3d/raymond>.
+The full API documentation is available here: <http://godoc.org/github.com/dnorton211153/raymond>.
 
-![Raymond Logo](https://github.com/daz3d/raymond/blob/master/raymond.png?raw=true "Raymond")
+![Raymond Logo](https://github.com/dnorton211153/raymond/blob/master/raymond.png?raw=true "Raymond")
 
 
 # Table of Contents
@@ -56,7 +56,7 @@ The full API documentation is available here: <http://godoc.org/github.com/daz3d
 
 ## Quick Start
 
-    $ go get github.com/daz3d/raymond
+    $ go get github.com/dnorton211153/raymond
 
 The quick and dirty way of rendering a handlebars template:
 
@@ -66,7 +66,7 @@ package main
 import (
     "fmt"
 
-    "github.com/daz3d/raymond"
+    "github.com/dnorton211153/raymond"
 )
 
 func main() {
@@ -116,7 +116,7 @@ package main
 import (
     "fmt"
 
-    "github.com/daz3d/raymond"
+    "github.com/dnorton211153/raymond"
 )
 
 func main() {
@@ -200,7 +200,7 @@ package main
 import (
   "fmt"
 
-  "github.com/daz3d/raymond"
+  "github.com/dnorton211153/raymond"
 )
 
 func main() {
@@ -308,7 +308,7 @@ raymond.RegisterHelper("link", func(url, text string) raymond.SafeString {
 tpl := raymond.MustParse("{{link url text}}")
 
 ctx := map[string]string{
-    "url":  "http://www.daz3d.com/",
+    "url":  "http://www.dnorton211153.com/",
     "text": "This is a <em>cool</em> website",
 }
 
@@ -319,7 +319,7 @@ fmt.Print(result)
 Output:
 
 ```html
-<a href='http://www.daz3d.com/'>This is a &lt;em&gt;cool&lt;/em&gt; website</a>
+<a href='http://www.dnorton211153.com/'>This is a &lt;em&gt;cool&lt;/em&gt; website</a>
 ```
 
 
@@ -1315,7 +1315,7 @@ package main
 import (
     "fmt"
 
-    "github.com/daz3d/raymond/v2/lexer"
+    "github.com/dnorton211153/raymond/v2/lexer"
 )
 
 func main() {
@@ -1357,8 +1357,8 @@ package main
 import (
     "fmt"
 
-    "github.com/daz3d/raymond/ast"
-    "github.com/daz3d/raymond/parser"
+    "github.com/dnorton211153/raymond/ast"
+    "github.com/dnorton211153/raymond/parser"
 )
 
 fu  nc main() {

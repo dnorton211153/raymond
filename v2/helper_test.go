@@ -245,7 +245,7 @@ func TestRemoveHelper(t *testing.T) {
 }
 
 //
-// Fixes: https://github.com/daz3d/raymond/issues/2
+// Fixes: https://github.com/dnorton211153/raymond/issues/2
 //
 
 type Author struct {

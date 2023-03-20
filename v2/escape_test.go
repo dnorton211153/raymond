@@ -10,11 +10,11 @@ func ExampleEscape() {
 	})
 
 	ctx := map[string]string{
-		"url":  "http://www.daz3d.com/",
+		"url":  "http://www.dnorton211153.com/",
 		"text": "This is a <em>cool</em> website",
 	}
 
 	result := tpl.MustExec(ctx)
 	fmt.Print(result)
-	// Output: <a href='http://www.daz3d.com/'>This is a &lt;em&gt;cool&lt;/em&gt; website</a>
+	// Output: <a href='http://www.dnorton211153.com/'>This is a &lt;em&gt;cool&lt;/em&gt; website</a>
 }
