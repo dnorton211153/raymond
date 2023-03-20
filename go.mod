@@ -1,4 +1,4 @@
-module github.com/daz3d/raymond
+module github.com/daz3d/raymond/v2
 
 go 1.11
 
